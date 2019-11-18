@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <ul className="wrapper menu">
@@ -65,7 +65,7 @@ const Header = () => {
             </li>
           </ul>
         </li>
-        <li className="menu-right">
+        <li className="connect">
           <svg
             className="connect-logo"
             width="30"
@@ -81,7 +81,27 @@ const Header = () => {
               fill="black"
             />
           </svg>
-          <div className="connect-title">Se connecter</div>
+          {props.user ? (
+            <div className="connect-title"
+              onClick={() => {
+                props.logOut();
+              }}
+            >
+              Se déconnecter
+            </div>
+          ) : (
+            <div className="connect-title"
+              onClick={() => {
+                // setUser va permettre de modifier l'état `user` et qui se trouve dans le composant App
+                props.logIn({
+                  name: "Farid"
+                });
+                props.setShowModal(true);
+              }}
+            >
+              Se connecter
+            </div>
+          )}
         </li>
       </ul>
     </header>
