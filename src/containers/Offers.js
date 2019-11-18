@@ -27,15 +27,14 @@ const Home = () => {
     <section>
       <div className="wrapper offers-main">
         <div className="ellipse"></div>
-        <div className="searchbox">
-          <form>
+          <div className="searchbox">
             <div className="offers-search-input">
               <svg
                 className="offers-search-input-logo"
                 width="18"
                 height="18"
                 viewBox="0 0 18 18"
-                fill="none"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -52,8 +51,7 @@ const Home = () => {
               ></input>
             </div>
             <button className="offers-search-button">Rechercher</button>
-          </form>
-        </div>
+          </div>
         {isLoading === true ? (
           <div className="loader">
             <div></div>
