@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+/* GLOBAL */
+
+.wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+body{
+  --orange: #F56B2A;
+  font-family: "Roboto", sans-serif;
+}
+
+/* On peut créer des règles (des classes) qu'on rajoute aux éléments qu'on veut styliser de la même manière */
+.box-shadow {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER */
+
+.menu {
+  display: flex;
+  padding: 0.3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-left {
+  padding-left: 3rem;
+  flex: 0.7;
+}
+
+.menu-left ul {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0.3;
+}
+
+.button {
+  background: #f56b2a;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+}
+
+.button-title {
+  padding: 0.2rem;
+}
+
+.button-logo {
+  padding: 0.2rem;
+}
+
+.search {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--orange);
+}
+
+.search-title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  color: #000000;
+}
+
+.connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connect-title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+/* LOADER */
+
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.loader div {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  width: 13px;
+  background: black;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.loader div:nth-child(1) {
+  left: 6px;
+  animation-delay: -0.24s;
+}
+.loader div:nth-child(2) {
+  left: 26px;
+  animation-delay: -0.12s;
+}
+.loader div:nth-child(3) {
+  left: 45px;
+  animation-delay: 0;
+}
+@keyframes loader {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+  50%,
+  100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+
+/* OFFERS */
+
+.offers-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.ellipse {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100px;
+  background: var(--orange);
+}
+
+.search-box {
+  background-color: blue;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 810px;
+  height: 130px;
+  margin-top: 1rem;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offers-search-input {
+  background-color: #f4f6f7;
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 44px;
+}
+
+.offers-search-input-logo {
+  padding: 0.5rem;
+}
+
+.offers-search-input-inside {
+  border: none;
+  background-color: #f4f6f7;
+  color: #8191a0;
+  width: 100%;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.offers-search-button {
+  margin-left: 1.2rem;
+  background-color: #4183d7;
+  color: white;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  padding: 0.3rem 2rem;
+}
+
+.offercard {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  width: 1000px;
+  height: 180px;
+  background: #ffffff;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+  /* overflow:hidden indique de ne pas tenir compte de l'enfant qui n'a pas le border radius et donc qui dépasse du parent */
+}
+
+.offercard:hover {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.offercard-img-frame {
+  display: flex;
+  justify-content: center;
+  width: 240px;
+  height: 180px;
+  background: #cad1d9;
+}
+
+.offercard-img {
+  object-fit: contain;
+}
+
+.offercard-infos {
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  padding: 0.3rem;
+  color: #000000;
+}
+
+.offercard-price {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+  color: var(--orange);
+}
+
+.offercard-date {
+  font-size: 1rem;
+  line-height: 140%;
+  color: black;
+}
+
+/* OFFER */
+
+.offer-page {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 700px;
+  height: 600px;
+  background: white;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.img{
+  object-fit: contain;
+  position:center;
+}
+
+.img-frame{
+  width:700px;
+  height:400px;
+  background-color: grey;
+  overflow:hidden;
+  display:flex;
+  justify-content: center;
+}
+
+.offer-desc {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 140%;
+  color: #000000;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: green;
+}
+
+footer div {
+  line-height: 80px;
+  text-align: center;
+}
