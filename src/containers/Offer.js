@@ -39,17 +39,17 @@ const Offer = props => {
     <div className="offer-card">
     <div className="img-frame">
      <img className='img' src={data.pictures[0]} /> </div>
+     <div className="offer-infos">
       <div className="offercard-title">{data.title}</div>
       <div className="offercard-price">{data.price} €</div>
       <div className="offercard-date">{new Date(data.created).toLocaleDateString() + " à " + new Date(data.created).toLocaleTimeString()
-}</div>
+}</div></div>
 
       </div>
-          <div>Description<br/>{data.description}</div>
-          <div className="offer-desc"></div>
+          <div className="offercard-desc">Description<div className="offer-desc">{data.description}</div></div>
         </div>
-        <div className="offer-infos"></div>
-        <aside></aside>    </section>
+        
+        <aside><div className="offer-aside">{data.creator.account.username}</div></aside>    </section>
         )
     }
     </>

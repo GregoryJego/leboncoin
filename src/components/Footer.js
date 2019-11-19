@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-      <div className="wrapper">FOOTER</div>
+      <div className="wrapper">Réplique de Leboncoin</div>
     </footer>
   );
 };

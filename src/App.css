@@ -97,6 +97,8 @@ body{
   line-height: 18px;
 }
 
+/* MODALE */
+
 .modal {  
   width:100%;
   height:100%;
@@ -110,16 +112,24 @@ body{
   align-items: center;
 }
 
+.modal input{
+  width:100%;
+  line-height: 30px;
+  font-family: "Roboto", sans-serif;
+
+  border-radius: 5px;
+  border: 1px solid #D9E0EB;}
+
 .modal-content{
   background-color: #fefefe;
   padding: 1rem 3rem;
+  width:600px;
+  height:450px;
   margin: auto;
   border: 1px solid #888;
-  width: 50%;
-  height:60%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 hr{ 
@@ -149,12 +159,22 @@ text-align: center;
   height: 40px;
   background: #4183D7;
   color:white;
-  font-family: Roboto;
 font-style: normal;
 font-weight: bold;
 font-size: 14px;
 line-height: 19px;
 border-radius: 5px;
+cursor: pointer;
+}
+
+.reverse{
+  color: #4183D7;
+  background:white;
+}
+
+.separator{
+  border: 1px solid #E4E8EC;
+  width:100%;
 }
 
 /* LOADER */
@@ -224,6 +244,7 @@ border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
 
 }
 
@@ -264,10 +285,10 @@ border-radius: 5px;
   display: flex;
   width: 1000px;
   height: 180px;
-  background: #ffffff;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin-top: 1.2rem;
+  margin-bottom: 2rem;
   cursor: pointer;
   text-decoration: none;
   overflow: hidden;
@@ -281,9 +302,8 @@ border-radius: 5px;
 .offercard-img-frame {
   display: flex;
   justify-content: center;
-  width: 240px;
-  height: 180px;
-  background: #cad1d9;
+flex:.2;  
+background: #cad1d9;
 }
 
 .offercard-img {
@@ -291,7 +311,6 @@ border-radius: 5px;
 }
 
 .offercard-infos {
-  border-radius: 5px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -299,6 +318,8 @@ border-radius: 5px;
   line-height: 1.6rem;
   padding: 0.3rem;
   color: #000000;
+  padding:1rem;
+  flex:.8;
 }
 
 .offercard-price {
@@ -314,6 +335,7 @@ border-radius: 5px;
   font-size: 1rem;
   line-height: 140%;
   color: black;
+  margin-top:4rem;
 }
 
 /* OFFER */
@@ -329,11 +351,9 @@ border-radius: 5px;
   margin-top:2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 700px;
   height: 600px;
-  background: white;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .img{
@@ -350,6 +370,26 @@ border-radius: 5px;
   justify-content: center;
 }
 
+.offercard-title{
+  font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+margin-bottom: 1rem;
+line-height: 30px;}
+
+.offer-infos{
+  padding:2rem;
+}
+
+.offercard-desc {
+  margin: 2rem 0rem;
+  font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 140%;}
+
 .offer-desc {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -359,13 +399,33 @@ border-radius: 5px;
   color: #000000;
 }
 
+.offer-aside {
+  width: 279px;
+height: 195px;
+box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+margin: 2rem 0rem;
+margin-left:1rem;
+font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 23px;
+line-height: 140%;
+padding:1rem;
+}
+
 /* FOOTER */
 
 footer {
-  background-color: green;
-}
+  background: #474747;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 140%;
+color:white;}
 
 footer div {
   line-height: 80px;
   text-align: center;
+  font-family: "Roboto", sans-serif;
 }
