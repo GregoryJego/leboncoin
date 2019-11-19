@@ -79,8 +79,9 @@ const Login = props => {
       <input className="modal-button" type="submit" value={"Se connecter"} />
       <div className="separator"></div>
       <div className="text-secondaire" style={{textAlign:"center"}}>Vous n'avez pas de compte ?</div>
-      <Link to={"/signup"}>
-      <button className="modal-button reverse">Créer un compte</button>
+      <Link to={"/signup"}
+   >
+      <button className="modal-button reverse" onClick={()=>{props.setIsModalDisplayed(false)}}>Créer un compte</button>
       </Link>
     </form>
   );

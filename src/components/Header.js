@@ -28,7 +28,7 @@ const Header = (props) => {
               </svg></Link>
             </li>
             <li>
-              <div className="button">
+              <div className="button" onClick={()=>{if (!props.user.token)alert("Veuillez vous identifier Pourquoi  déposer une annonce.");}}>
                 <svg
                   className="button-logo"
                   width="23"
@@ -64,7 +64,7 @@ const Header = (props) => {
                     fill="black"
                   />
                 </svg>
-                <div className="search-title">Rechercher</div>
+                <input type="text" className="search-title" placeholder="Rechercher"/>
               </div>
             </li>
           </ul>

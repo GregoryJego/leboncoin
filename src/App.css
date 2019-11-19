@@ -62,6 +62,7 @@ body{
   justify-content: center;
   align-items: center;
   padding: 0.2rem;
+  cursor:pointer;
 }
 
 .button-title {
@@ -86,6 +87,7 @@ body{
   font-size: 1.1rem;
   line-height: 1.3rem;
   color: #000000;
+  border:none;
 }
 
 
@@ -412,6 +414,88 @@ font-size: 23px;
 line-height: 140%;
 padding:1rem;
 }
+
+/* SIGNUP */
+
+.signup-container{
+  display:flex;
+margin: 0 auto;
+  margin-top:2rem;
+  margin-bottom:2rem;
+  height:400px;
+  width:80%;
+  /* background: #FFFFFF; */
+box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-side{
+  width:50%;
+  display:flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 22px;
+color: #000000;
+padding:1rem;
+}
+
+.signup-right-content{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  align-items: flex-start;
+  background-color:yellow;
+}
+
+.password{
+  width:100%;
+}
+
+.check{
+  padding:.5rem;
+  padding-left:0;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 154.9%;
+display:flex;
+text-align:justify}
+
+.item{
+  display:flex;
+  padding-top:1rem;
+    justify-content: space-evenly;
+    height:100%;
+}
+
+.item-infos{
+  padding-left:1rem;
+}
+
+.item-title{
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  
+  color: #000000;}
+
+.item-content{
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  
+  color: #000000;}
+
+  .password{
+    display:flex;
+    justify-content: space-between;
+  }
 
 /* FOOTER */
 
