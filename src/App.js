@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Offers from "./containers/Offers";
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Router>
-    {isModalDisplayed === true && (
+      {isModalDisplayed === true && (
         <div className="modal">
           <div
             className="modal-close"
@@ -29,7 +29,7 @@ function App() {
           >
             x
           </div>
-          <div >
+          <div>
             <Login
               setIsModalDisplayed={setIsModalDisplayed}
               setUser={setUser}
@@ -46,8 +46,8 @@ function App() {
         <Route path="/offer/:id">
           <Offer />
         </Route>
-        <Route path="/signup">
-          <Signup setUser={setUser} user={user}/>
+        <Route path="/sign_up">
+          <Signup setUser={setUser} user={user} />
         </Route>
         <Route path="/">
           <Offers />
