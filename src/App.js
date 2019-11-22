@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Offers from "./containers/Offers";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
+import Publish from "./containers/Publish";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Cookie from "js-cookie";
@@ -18,43 +19,48 @@ function App() {
   const [isModalDisplayed, setIsModalDisplayed] = useState(false);
 
   return (
-    <Router>
-      {isModalDisplayed === true && (
-        <div className="modal">
-          <div
-            className="modal-close"
-            onClick={() => {
-              setIsModalDisplayed(false);
-            }}
-          >
-            x
+    <div className="global">
+      <Router>
+        {isModalDisplayed === true && (
+          <div className="modal">
+            <div
+              className="modal-close"
+              onClick={() => {
+                setIsModalDisplayed(false);
+              }}
+            >
+              x
+            </div>
+            <div>
+              <Login
+                setIsModalDisplayed={setIsModalDisplayed}
+                setUser={setUser}
+              />
+            </div>
           </div>
-          <div>
-            <Login
-              setIsModalDisplayed={setIsModalDisplayed}
-              setUser={setUser}
-            />
-          </div>
-        </div>
-      )}
-      <Header
-        setUser={setUser}
-        user={user}
-        setIsModalDisplayed={setIsModalDisplayed}
-      />
-      <Switch>
-        <Route path="/offer/:id">
-          <Offer />
-        </Route>
-        <Route path="/sign_up">
-          <Signup setUser={setUser} user={user} />
-        </Route>
-        <Route path="/">
-          <Offers />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
+        )}
+        <Header
+          setUser={setUser}
+          user={user}
+          setIsModalDisplayed={setIsModalDisplayed}
+        />
+        <Switch>
+          <Route path="/offer/:id">
+            <Offer />
+          </Route>
+          <Route path="/sign_up">
+            <Signup setUser={setUser} user={user} />
+          </Route>
+          <Route path="/publish">
+            <Publish user={user} />
+          </Route>
+          <Route path="/">
+            <Offers />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

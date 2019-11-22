@@ -20,7 +20,7 @@ const Login = props => {
 
           try {
             const response = await axios.post(
-              "https://leboncoin-api.herokuapp.com/api/user/log_in",
+              "http://localhost:4000/leboncoin-api/user/log_in",
               {
                 email: email,
                 password: password
@@ -59,9 +59,9 @@ const Login = props => {
           history.goBack();
         }}
       >
-        <div className="text-principal">Connexion</div>
+        <div className="big-font">Connexion</div>
         <hr />
-        <div className="text-secondaire">Adresse email</div>
+        <div className="small-font">Adresse email</div>
         <input
           type="email"
           value={email}
@@ -70,7 +70,7 @@ const Login = props => {
             setEmail(event.target.value);
           }}
         />
-        <div className="text-secondaire">Mot de passe</div>
+        <div className="small-font">Mot de passe</div>
         <input
           type="password"
           value={password}
@@ -80,7 +80,7 @@ const Login = props => {
         />
         <input className="modal-button" type="submit" value={"Se connecter"} />
         <div className="separator"></div>
-        <div className="text-secondaire" style={{ textAlign: "center" }}>
+        <div className="small-font" style={{ textAlign: "center" }}>
           Vous n'avez pas de compte ?
         </div>
         <Link

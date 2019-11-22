@@ -1,20 +1,65 @@
+/* Import font family Roboto */
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-/* GLOBAL */
+/* GLOBAL RULES */
 
 .wrapper {
-  width: 1024px;
+  width: 1024px; /* vw permet de rendre le tout redimensionnable */
   margin: 0 auto;
 }
 
 body {
   --orange: #f56b2a;
-  font-family: "Roboto", sans-serif;
+  --blue: #4183d7;
+  --grey: #cad1d9;
 }
 
-/* On peut créer des règles (des classes) qu'on rajoute aux éléments qu'on veut styliser de la même manière */
+.global {
+  font: normal 1rem Roboto, Arial, sans-serif;
+  color: #000000;
+}
+
+button {
+  font-size: 1rem;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.orange-bg {
+  background: var(--orange);
+}
+
+.blue-bg {
+  background: var(--blue);
+}
+
+.red-font {
+  color: red;
+}
+
+.small-font {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.2rem;
+}
+
+.big-font {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.75rem;
+  text-align: center;
+}
+
 .box-shadow {
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+  border: 1px solid var(--orange);
+  width: 100%;
 }
 
 /* HEADER */
@@ -25,7 +70,6 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu-left {
@@ -49,13 +93,8 @@ body {
   cursor: pointer;
 }
 
-.button {
-  background: #f56b2a;
+button {
   border-radius: 5px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1rem;
   line-height: 1.2rem;
   color: #ffffff;
   display: flex;
@@ -70,7 +109,7 @@ body {
   padding: 0.2rem;
 }
 
-.button-logo {
+.svg-plus {
   padding: 0.2rem;
 }
 
@@ -79,13 +118,10 @@ body {
   display: flex;
   align-items: center;
   border-bottom: 2px solid var(--orange);
+  width: 100%;
 }
 
 .search-title {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
   line-height: 1.3rem;
   color: #000000;
   border: none;
@@ -93,10 +129,8 @@ body {
 }
 
 .connect-title {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 15px;
   line-height: 18px;
 }
 
@@ -105,7 +139,6 @@ body {
 .modal {
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
   position: absolute;
   overflow: auto; /* Enable scroll if needed */
@@ -117,7 +150,6 @@ body {
 
 .closemodal {
   color: white;
-  font-family: "Roboto", sans-serif;
   font-size: 2rem;
   position: absolute;
   top: 1rem;
@@ -128,8 +160,6 @@ body {
 .modal input {
   width: 100%;
   line-height: 30px;
-  font-family: "Roboto", sans-serif;
-
   border-radius: 5px;
   border: 1px solid #d9e0eb;
 }
@@ -146,36 +176,13 @@ body {
   justify-content: space-between;
 }
 
-hr {
-  border: 1px solid var(--orange);
-  width: 100%;
-}
-
-.text-principal {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-  text-align: center;
-}
-
-.text-secondaire {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
-}
-
 .modal-button {
   width: 100%;
   height: 40px;
-  background: #4183d7;
+  background: var(--blue);
   color: white;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
   line-height: 19px;
   border-radius: 5px;
   cursor: pointer;
@@ -183,7 +190,7 @@ hr {
 }
 
 .reverse {
-  color: #4183d7;
+  color: var(--blue);
   background: white;
 }
 
@@ -195,40 +202,20 @@ hr {
 /* LOADER */
 
 .loader {
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
-.loader div {
-  display: inline-block;
-  position: absolute;
-  left: 6px;
-  width: 13px;
-  background: black;
-  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-}
-.loader div:nth-child(1) {
-  left: 6px;
-  animation-delay: -0.24s;
-}
-.loader div:nth-child(2) {
-  left: 26px;
-  animation-delay: -0.12s;
-}
-.loader div:nth-child(3) {
-  left: 45px;
-  animation-delay: 0;
-}
-@keyframes loader {
+
+@keyframes spin {
   0% {
-    top: 6px;
-    height: 51px;
+    transform: rotate(0deg);
   }
-  50%,
   100% {
-    top: 19px;
-    height: 26px;
+    transform: rotate(360deg);
   }
 }
 
@@ -240,21 +227,19 @@ hr {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
 }
 
 .ellipse {
-  width: 100vw;
+  width: 100%;
   height: 100px;
   background: var(--orange);
 }
 
 .searchbox {
   background-color: white;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  width: 810px;
-  height: 130px;
+  width: 80vw;
+  height: 20vh;
   margin-top: -4rem;
   display: flex;
   justify-content: center;
@@ -267,8 +252,8 @@ hr {
   display: flex;
   padding-left: 1rem;
   align-items: center;
-  width: 320px;
-  height: 44px;
+  width: 50%;
+  margin-right: 1rem;
 }
 
 .offers-search-input-inside {
@@ -280,44 +265,28 @@ hr {
   padding: 0.5rem;
 }
 
-.offers-search-button {
-  margin-left: 1.2rem;
-  background-color: #4183d7;
-  color: white;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1.2rem;
-  padding: 0.3rem 2rem;
-}
-
 .offercard {
-  font-family: "Roboto", sans-serif;
   display: flex;
   width: 1000px;
   height: 180px;
   background-color: white;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin-bottom: 2rem;
   cursor: pointer;
   text-decoration: none;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* overflow:hidden indique de ne pas tenir compte de l'enfant qui n'a pas le border radius et donc qui dépasse du parent */
 }
 
 .offercard:hover {
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .offercard-img-frame {
   display: flex;
   justify-content: center;
   flex: 0.2;
-  background: #cad1d9;
+  background: var(--grey);
 }
 
 .offercard-img {
@@ -325,7 +294,6 @@ hr {
 }
 
 .offercard-infos {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.4rem;
@@ -337,7 +305,6 @@ hr {
 }
 
 .offercard-price {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.25rem;
@@ -346,7 +313,6 @@ hr {
 }
 
 .offercard-date {
-  font-size: 1rem;
   line-height: 140%;
   color: black;
   margin-top: 4rem;
@@ -357,7 +323,6 @@ hr {
 .offer-page {
   display: flex;
   justify-content: center;
-  font-family: "Roboto", sans-serif;
 }
 
 .offer-card {
@@ -366,7 +331,6 @@ hr {
   flex-direction: column;
   width: 700px;
   height: 600px;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .img {
@@ -384,7 +348,6 @@ hr {
 }
 
 .offercard-title {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
@@ -398,7 +361,6 @@ hr {
 
 .offercard-desc {
   margin: 2rem 0rem;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
@@ -406,7 +368,6 @@ hr {
 }
 
 .offer-desc {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 19px;
@@ -417,15 +378,28 @@ hr {
 .offer-aside {
   width: 279px;
   height: 195px;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
   margin: 2rem 0rem;
   margin-left: 1rem;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 23px;
   line-height: 140%;
   padding: 1rem;
+}
+
+/* PUBLISH */
+
+.white-box {
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 70%;
+  height: 80vh;
+  padding: 1rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 /* SIGNUP */
@@ -437,15 +411,12 @@ hr {
   margin-bottom: 2rem;
   height: 400px;
   width: 80%;
-  /* background: #FFFFFF; */
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .signup-side {
   width: 50%;
   display: flex;
   flex-direction: column;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
@@ -488,22 +459,15 @@ hr {
 }
 
 .item-title {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
   line-height: 16px;
-
-  color: #000000;
 }
 
 .item-content {
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
   line-height: 16px;
-
   color: #000000;
 }
 
@@ -520,7 +484,6 @@ hr {
 
 footer {
   background: #474747;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 19px;
@@ -531,5 +494,26 @@ footer {
 footer div {
   line-height: 80px;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90vw;
+  }
+  .header-logo {
+    width: 7rem;
+  }
+  .global {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.8rem;
+  }
+  .menu-left {
+    padding-left: 1rem;
+  }
+  .white-box {
+    padding: 1rem 2rem;
+    width: 80%;
+  }
 }

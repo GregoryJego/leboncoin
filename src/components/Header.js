@@ -5,13 +5,13 @@ import Cookie from "js-cookie";
 const Header = props => {
   return (
     <header>
-      <ul className="wrapper menu">
+      <ul className="wrapper menu box-shadow">
         <li className="menu-left">
           <ul>
             <li>
               <Link to={"/"}>
                 <svg
-                  className="logo"
+                  className="header-logo"
                   width="169"
                   height="30"
                   viewBox="0 0 169 30"
@@ -28,33 +28,27 @@ const Header = props => {
               </Link>
             </li>{" "}
             <li>
-              <div
-                className="button"
-                onClick={() => {
-                  if (!props.user.token)
-                    alert(
-                      "Veuillez vous identifier Pourquoi  déposer une annonce."
-                    );
-                }}
-              >
-                <svg
-                  className="button-logo"
-                  width="23"
-                  height="23"
-                  viewBox="0 0 23 23"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M19.9583 0.625H3.04167C1.70042 0.625 0.625 1.7125 0.625 3.04167V19.9583C0.625 21.2875 1.70042 22.375 3.04167 22.375H19.9583C21.2875 22.375 22.375 21.2875 22.375 19.9583V3.04167C22.375 1.7125 21.2875 0.625 19.9583 0.625ZM19.9583 19.9583H3.04167V3.04167H19.9583V19.9583ZM12.7083 17.5417H10.2917V12.7083H5.45833V10.2917H10.2917V5.45833H12.7083V10.2917H17.5417V12.7083H12.7083V17.5417Z"
-                    fill="white"
-                  />
-                </svg>{" "}
-                <div className="button-title"> Déposer une annonce </div>{" "}
-              </div>{" "}
-            </li>{" "}
+              <Link className="link" to="/publish">
+                <button className="orange-bg">
+                  <svg
+                    className="svg-plus"
+                    width="23"
+                    height="23"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M19.9583 0.625H3.04167C1.70042 0.625 0.625 1.7125 0.625 3.04167V19.9583C0.625 21.2875 1.70042 22.375 3.04167 22.375H19.9583C21.2875 22.375 22.375 21.2875 22.375 19.9583V3.04167C22.375 1.7125 21.2875 0.625 19.9583 0.625ZM19.9583 19.9583H3.04167V3.04167H19.9583V19.9583ZM12.7083 17.5417H10.2917V12.7083H5.45833V10.2917H10.2917V5.45833H12.7083V10.2917H17.5417V12.7083H12.7083V17.5417Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <div className="button-title">Déposer une annonce </div>{" "}
+                </button>
+              </Link>
+            </li>
             <li>
               <div className="search">
                 <svg
@@ -71,16 +65,16 @@ const Header = props => {
                     d="M24.9417 23.7584H26.2583L34.575 32.0917L32.0917 34.575L23.7583 26.2584V24.9417L23.3083 24.475C21.4083 26.1084 18.9417 27.0917 16.2583 27.0917C10.275 27.0917 5.425 22.2417 5.425 16.2584C5.425 10.275 10.275 5.42502 16.2583 5.42502C22.2417 5.42502 27.0917 10.275 27.0917 16.2584C27.0917 18.9417 26.1083 21.4084 24.475 23.3083L24.9417 23.7584ZM8.75833 16.2584C8.75833 20.4084 12.1083 23.7584 16.2583 23.7584C20.4083 23.7584 23.7583 20.4084 23.7583 16.2584C23.7583 12.1084 20.4083 8.75835 16.2583 8.75835C12.1083 8.75835 8.75833 12.1084 8.75833 16.2584Z"
                     fill="black"
                   />
-                </svg>{" "}
+                </svg>
                 <input
                   type="text"
                   className="search-title"
                   placeholder="Rechercher"
                 />
-              </div>{" "}
-            </li>{" "}
-          </ul>{" "}
-        </li>{" "}
+              </div>
+            </li>
+          </ul>
+        </li>
         <li className="connect">
           <svg
             className="connect-logo"
@@ -96,7 +90,7 @@ const Header = props => {
               d="M15 5C12.2375 5 10 7.2375 10 10C10 12.7625 12.2375 15 15 15C17.7625 15 20 12.7625 20 10C20 7.2375 17.7625 5 15 5ZM17.625 10C17.625 8.55 16.45 7.375 15 7.375C13.55 7.375 12.375 8.55 12.375 10C12.375 11.45 13.55 12.625 15 12.625C16.45 12.625 17.625 11.45 17.625 10ZM22.625 21.25C22.625 20.45 18.7125 18.625 15 18.625C11.2875 18.625 7.375 20.45 7.375 21.25V22.625H22.625V21.25ZM5 21.25C5 17.925 11.6625 16.25 15 16.25C18.3375 16.25 25 17.925 25 21.25V25H5V21.25Z"
               fill="black"
             />
-          </svg>{" "}
+          </svg>
           {props.user.token ? (
             <span
               className="connect-title"
