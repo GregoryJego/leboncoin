@@ -79,12 +79,40 @@ const Home = () => {
             })}
           </div>
         )}
+
+        <ul className="pages">
+          <li>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.835 3.86998L16.055 2.09998L6.16504 12L16.065 21.9L17.835 20.13L9.70504 12L17.835 3.86998Z"
+                fill="#336699"
+                fill-opacity="0.5"
+              />
+            </svg>
+          </li>
+          <li>1</li>
+          <li>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.16504 20.13L7.93504 21.9L17.835 12L7.93504 2.09998L6.16504 3.86998L14.295 12L6.16504 20.13H6.16504Z"
+                fill="#336699"
+              />
+            </svg>
+          </li>
+        </ul>
       </div>
-      <ul className="pages">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
     </section>
   );
 };
