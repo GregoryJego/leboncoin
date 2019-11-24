@@ -10,7 +10,7 @@ const Publish = props => {
 
   let isEnabled = false;
 
-  if (title && description && price && thefile) isEnabled = true;
+  if (title && description && price && file) isEnabled = true;
 
   return (
     <div className="wrapper">
@@ -92,7 +92,6 @@ const Publish = props => {
           <div className="small-font">Photo</div>
           <input
             type="file"
-            value={thefile}
             onChange={event => {
               setFile(event.target.files[0]);
             }}
