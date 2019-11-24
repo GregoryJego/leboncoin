@@ -14,6 +14,7 @@ const Login = props => {
 
   return (
     <>
+      {isLoading && <div className="loader"></div>}
       <form
         className="modal-content"
         onSubmit={async event => {
@@ -62,52 +63,46 @@ const Login = props => {
           history.goBack();
         }}
       >
-        {isLoading ? (
-          <div className="loader"></div>
-        ) : (
-          <>
-            <div className="big-font">Connexion</div>
-            <hr />
-            <div className="small-font">Adresse email</div>
-            <input
-              type="email"
-              value={email}
-              onChange={event => {
-                // console.log(event.target.value); // farid@lereacteur.io
-                setEmail(event.target.value);
-              }}
-            />
-            <div className="small-font">Mot de passe</div>
-            <input
-              type="password"
-              value={password}
-              onChange={event => {
-                setPassword(event.target.value);
-              }}
-            />
-            <input
-              className="modal-button"
-              type="submit"
-              value={"Se connecter"}
-              onClick={() => {
-                setIsLoading(true);
-              }}
-            />
-            <div className="separator"></div>
-            <div className="small-font" style={{ textAlign: "center" }}>
-              Vous n'avez pas de compte ?
-            </div>
-            <Link
-              className="link"
-              to={"/sign_up"}
-              onClick={() => {
-                props.setIsModalDisplayed(false);
-              }}
-            >
-              <button className="modal-button reverse">Créer un compte</button>
-            </Link>
-          </>
-        )}
+        <div className="big-font">Connexion</div>
+        <hr />
+        <div className="small-font">Adresse email</div>
+        <input
+          type="email"
+          value={email}
+          onChange={event => {
+            // console.log(event.target.value); // farid@lereacteur.io
+            setEmail(event.target.value);
+          }}
+        />
+        <div className="small-font">Mot de passe</div>
+        <input
+          type="password"
+          value={password}
+          onChange={event => {
+            setPassword(event.target.value);
+          }}
+        />
+        <input
+          className="modal-button"
+          type="submit"
+          value={"Se connecter"}
+          onClick={() => {
+            setIsLoading(true);
+          }}
+        />
+        <div className="separator"></div>
+        <div className="small-font" style={{ textAlign: "center" }}>
+          Vous n'avez pas de compte ?
+        </div>
+        <Link
+          className="link"
+          to={"/sign_up"}
+          onClick={() => {
+            props.setIsModalDisplayed(false);
+          }}
+        >
+          <button className="modal-button reverse">Créer un compte</button>
+        </Link>
       </form>
       <div
         className="closemodal"
