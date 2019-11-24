@@ -71,7 +71,9 @@ const Login = props => {
         <div className="big-font">Connexion</div>
         <hr />
         {isLoading ? (
-          <div className="loader"></div>
+          <div className="container">
+            <div className="loader"></div>
+          </div>
         ) : (
           <>
             <div className="small-font">Adresse email</div>
@@ -91,17 +93,17 @@ const Login = props => {
                 setPassword(event.target.value);
               }}
             />
+            <input
+              className={isEnabled + " modal-button"}
+              type="submit"
+              value={"Se connecter"}
+              // onClick={() => {
+              //   setIsLoading(true);
+              // }}
+            />
           </>
         )}
 
-        <input
-          className={isEnabled + " modal-button"}
-          type="submit"
-          value={"Se connecter"}
-          // onClick={() => {
-          //   setIsLoading(true);
-          // }}
-        />
         <div className="separator"></div>
         <div className="small-font" style={{ textAlign: "center" }}>
           Vous n'avez pas de compte ?

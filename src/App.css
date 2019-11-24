@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.container {
+  margin: 0 auto;
+}
+
 body {
   --orange: #f56b2a;
   --blue: #4183d7;

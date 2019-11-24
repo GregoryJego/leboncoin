@@ -62,11 +62,7 @@ const Home = () => {
           </button>
         </div>
         {isLoading === true ? (
-          <div className="loader">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <div className="loader"></div>
         ) : (
           <div className="offers">
             {data.map(offer => {
