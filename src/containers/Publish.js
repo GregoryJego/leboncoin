@@ -1,16 +1,96 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Dropzone from "react-dropzone";
+import { useDropzone } from "react-dropzone";
 import axios from "axios";
 
 const Publish = props => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState();
-  const [file, setFile] = useState();
+  const [files, setFiles] = useState([]);
   const [isPublished, setIsPublished] = useState(false);
 
   let isEnabled = false;
 
-  if (title && description && price && file) isEnabled = true;
+  if (title && description && price && files) isEnabled = true;
+
+  // Drop zone : preview
+  const thumbsContainer = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 16
+  };
+
+  const thumb = {
+    display: "inline-flex",
+    borderRadius: 2,
+    border: "1px solid #eaeaea",
+    marginBottom: 8,
+    marginRight: 8,
+    width: 100,
+    height: 100,
+    padding: 4,
+    boxSizing: "border-box"
+  };
+
+  const thumbInner = {
+    display: "flex",
+    minWidth: 0,
+    overflow: "hidden"
+  };
+
+  const img = {
+    display: "block",
+    width: "auto",
+    height: "100%"
+  };
+
+  function Previews(props) {
+    // const [files, setFiles] = useState([]);
+    const { getRootProps, getInputProps } = useDropzone({
+      accept: "image/*",
+      onDrop: acceptedFiles => {
+        setFiles(
+          acceptedFiles.map(file =>
+            Object.assign(file, {
+              preview: URL.createObjectURL(file)
+            })
+          )
+        );
+      }
+    });
+
+    const thumbs = files.map(file => (
+      <div style={thumb} key={file.name}>
+        <div style={thumbInner}>
+          <img src={file.preview} style={img} />
+        </div>
+      </div>
+    ));
+
+    // useEffect(
+    //   () => () => {
+    //     // Make sure to revoke the data uris to avoid memory leaks
+    //     files.forEach(file => URL.revokeObjectURL(file.preview));
+    //   },
+    //   [files]
+    // );
+
+    console.log(files);
+
+    return (
+      <section className="dropzone">
+        <div {...getRootProps()}>
+          <input {...getInputProps()} />
+          <p>
+            Glissez et déposez vos images ici, ou cliquez pour les sélectionner
+          </p>
+        </div>
+        <aside style={thumbsContainer}>{thumbs}</aside>
+      </section>
+    );
+  }
 
   return (
     <div className="wrapper">
@@ -29,7 +109,7 @@ const Publish = props => {
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              formData.append("files", file);
+              formData.append("files", files);
 
               try {
                 const response = await axios.post(
@@ -82,6 +162,7 @@ const Publish = props => {
             <input
               style={{ width: "30%" }}
               type="number"
+              min="0"
               value={price}
               onChange={event => {
                 setPrice(event.target.value);
@@ -90,12 +171,13 @@ const Publish = props => {
             <span> €</span>
           </div>
           <div className="small-font">Photo</div>
-          <input
+          {/* <input
             type="file"
             onChange={event => {
               setFile(event.target.files[0]);
             }}
-          />
+          /> */}
+          <Previews />
           <button
             className={isEnabled + " modal-button"}
             type="submit"
