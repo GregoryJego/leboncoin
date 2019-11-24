@@ -60,7 +60,8 @@ const Login = props => {
           // history.push("/offer/5dcc803be3e5c000154b03f2");
 
           // Naviguer vers la page precedente
-          history.goBack();
+          if (history.goBack()) history.goBack();
+          else history.push("/");
         }}
       >
         <div className="big-font">Connexion</div>
