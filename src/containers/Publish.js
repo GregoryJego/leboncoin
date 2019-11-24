@@ -8,6 +8,10 @@ const Publish = props => {
   const [file, setFile] = useState();
   const [isPublished, setIsPublished] = useState(false);
 
+  let isEnabled = false;
+
+  if (title && description && price && thefile) isEnabled = true;
+
   return (
     <div className="wrapper">
       {isPublished ? (
@@ -20,7 +24,7 @@ const Publish = props => {
 
             if (!props.user.token)
               alert("Veuillez vous identifier pour déposer une annonce.");
-            else {
+            else if (isEnabled) {
               const formData = new FormData();
               formData.append("title", title);
               formData.append("description", description);
@@ -88,11 +92,16 @@ const Publish = props => {
           <div className="small-font">Photo</div>
           <input
             type="file"
+            value={thefile}
             onChange={event => {
               setFile(event.target.files[0]);
             }}
           />
-          <button className="blue-bg" type="submit" style={{ width: "100%" }}>
+          <button
+            className={isEnabled + " modal-button"}
+            type="submit"
+            style={{ width: "100%" }}
+          >
             Valider
           </button>
         </form>
