@@ -20,7 +20,7 @@ const Login = props => {
 
           try {
             const response = await axios.post(
-              "http://localhost:4000/leboncoin-api/user/log_in",
+              "https://leboncoin-api-gj.herokuapp.com/leboncoin-api/user/log_in",
               {
                 email: email,
                 password: password

@@ -11,7 +11,7 @@ const Offer = props => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:4000/leboncoin-api/offer/" + id
+        "https://leboncoin-api-gj.herokuapp.com/leboncoin-api/offer/" + id
       );
       setData(response.data);
       console.log("Voici la réponse : " + response.data);

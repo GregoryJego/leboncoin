@@ -29,7 +29,7 @@ const Publish = props => {
 
               try {
                 const response = await axios.post(
-                  "http://localhost:4000/leboncoin-api/offer/publish",
+                  "https://leboncoin-api-gj.herokuapp.com/leboncoin-api/offer/publish",
                   formData,
                   {
                     headers: {
