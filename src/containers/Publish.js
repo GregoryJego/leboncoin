@@ -37,7 +37,7 @@ const Publish = props => {
                     }
                   }
                 );
-                console.log("Voici la réponse : " + response);
+                console.log("Voici la réponse : " + response.data);
                 if (response) {
                   console.log("------- Annonce bien créée -------");
                   setIsPublished(true);
