@@ -77,7 +77,7 @@ const Publish = props => {
     //   [files]
     // );
 
-    console.log(files);
+    console.log("Voici les files : " + files);
 
     return (
       <section className="dropzone">
@@ -110,7 +110,7 @@ const Publish = props => {
               formData.append("description", description);
               formData.append("price", price);
               formData.append("files", files);
-
+              console.log("Voici les files transmises = " + files);
               try {
                 const response = await axios.post(
                   "https://leboncoin-api-gj.herokuapp.com/offer/publish",
