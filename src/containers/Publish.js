@@ -12,7 +12,7 @@ const Publish = props => {
 
   let isEnabled = false;
 
-  if (title && description && price && files) isEnabled = true;
+  if (title && description && price && files !== []) isEnabled = true;
 
   // Drop zone : preview
   const thumbsContainer = {
