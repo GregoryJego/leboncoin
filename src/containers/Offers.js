@@ -14,7 +14,9 @@ const Home = () => {
       const response = await axios.get(
         "https://leboncoin-api-gj.herokuapp.com/leboncoin-api/offers"
       );
-      console.log("REPONSE AFFICHAGE OFFERS : " + response.data);
+      console.log(Object.keys(response.data));
+      if (Object.keys(response.data) === 0)
+        console.log("---- No offer available ----");
       setData(response.data.offers);
       setIsLoading(false);
     } catch (e) {
