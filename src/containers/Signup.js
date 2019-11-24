@@ -108,7 +108,7 @@ const SignUp = props => {
             if (isEnabled) {
               try {
                 const response = await axios.post(
-                  "https://leboncoin-api-gj.herokuapp.com/leboncoin-api/user/sign_up",
+                  "https://leboncoin-api-gj.herokuapp.com/user/sign_up",
                   {
                     email: email,
                     username: username,

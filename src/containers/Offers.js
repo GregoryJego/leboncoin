@@ -12,7 +12,7 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://leboncoin-api-gj.herokuapp.com/leboncoin-api/offers"
+        "https://leboncoin-api-gj.herokuapp.com/offers"
       );
       console.log(Object.keys(response.data));
       if (Object.keys(response.data) === 0)
