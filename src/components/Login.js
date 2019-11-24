@@ -12,9 +12,12 @@ const Login = props => {
   // Pour accéder à l'historique de navigation
   const history = useHistory();
 
+  let isEnabled = false;
+
+  if (email && password) isEnabled = true;
+
   return (
     <>
-      {isLoading && <div className="loader"></div>}
       <form
         className="modal-content"
         onSubmit={async event => {
@@ -67,25 +70,32 @@ const Login = props => {
       >
         <div className="big-font">Connexion</div>
         <hr />
-        <div className="small-font">Adresse email</div>
+        {isLoading ? (
+          <div className="loader"></div>
+        ) : (
+          <>
+            <div className="small-font">Adresse email</div>
+            <input
+              type="email"
+              value={email}
+              onChange={event => {
+                // console.log(event.target.value); // farid@lereacteur.io
+                setEmail(event.target.value);
+              }}
+            />
+            <div className="small-font">Mot de passe</div>
+            <input
+              type="password"
+              value={password}
+              onChange={event => {
+                setPassword(event.target.value);
+              }}
+            />
+          </>
+        )}
+
         <input
-          type="email"
-          value={email}
-          onChange={event => {
-            // console.log(event.target.value); // farid@lereacteur.io
-            setEmail(event.target.value);
-          }}
-        />
-        <div className="small-font">Mot de passe</div>
-        <input
-          type="password"
-          value={password}
-          onChange={event => {
-            setPassword(event.target.value);
-          }}
-        />
-        <input
-          className="modal-button"
+          className={isEnabled + " modal-button"}
           type="submit"
           value={"Se connecter"}
           // onClick={() => {
