@@ -84,6 +84,7 @@ const Login = props => {
           Vous n'avez pas de compte ?
         </div>
         <Link
+          className="link"
           to={"/sign_up"}
           onClick={() => {
             props.setIsModalDisplayed(false);
