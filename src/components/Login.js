@@ -20,7 +20,7 @@ const Login = props => {
         onSubmit={async event => {
           // Bloque le chargement automatiquement de la page lors de la soumission du formulaire
           event.preventDefault();
-
+          setIsLoading(true);
           try {
             const response = await axios.post(
               "https://leboncoin-api-gj.herokuapp.com/leboncoin-api/user/log_in",
@@ -86,9 +86,9 @@ const Login = props => {
           className="modal-button"
           type="submit"
           value={"Se connecter"}
-          onClick={() => {
-            setIsLoading(true);
-          }}
+          // onClick={() => {
+          //   setIsLoading(true);
+          // }}
         />
         <div className="separator"></div>
         <div className="small-font" style={{ textAlign: "center" }}>
