@@ -500,6 +500,12 @@ footer div {
   text-align: center;
 }
 
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* DROP ZONE */
 
 .dropzone div {

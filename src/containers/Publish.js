@@ -7,12 +7,13 @@ const Publish = props => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState();
-  const [files, setFiles] = useState([]);
+  const [filesToSend, setFilesToSend] = useState([]);
   const [isPublished, setIsPublished] = useState(false);
 
   let isEnabled = false;
 
-  if (title && description && price && files !== []) isEnabled = true;
+  if (title && description && price && filesToSend.length >= 1)
+    isEnabled = true;
 
   // Drop zone : preview
   const thumbsContainer = {
@@ -47,7 +48,7 @@ const Publish = props => {
   };
 
   function Previews(props) {
-    // const [files, setFiles] = useState([]);
+    const [files, setFiles] = useState([]);
     const { getRootProps, getInputProps } = useDropzone({
       accept: "image/*",
       onDrop: acceptedFiles => {
@@ -76,8 +77,6 @@ const Publish = props => {
     //   },
     //   [files]
     // );
-
-    console.log("Voici les files : " + files);
 
     return (
       <section className="dropzone">
@@ -109,8 +108,8 @@ const Publish = props => {
               formData.append("title", title);
               formData.append("description", description);
               formData.append("price", price);
-              formData.append("files", files);
-              console.log("Voici les files transmises = " + files);
+              formData.append("files", filesToSend);
+              console.log("Voici les files transmises = " + filesToSend);
               try {
                 const response = await axios.post(
                   "https://leboncoin-api-gj.herokuapp.com/offer/publish",
