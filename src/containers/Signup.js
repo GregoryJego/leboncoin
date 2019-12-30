@@ -125,10 +125,10 @@ const SignUp = props => {
                   // Naviguer vers la page precedente
                   history.goBack();
                 } else {
-                  alert(response.error.message);
+                  alert("An error occured");
                 }
               } catch (e) {
-                alert(e.message);
+                alert(e);
               }
 
               // Naviguer vers une autre page
