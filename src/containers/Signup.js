@@ -128,7 +128,9 @@ const SignUp = props => {
                   alert("An error occured");
                 }
               } catch (e) {
-                alert(e);
+                if (e.response.status === 403)
+                  alert("Cet utilisateur existe déjà");
+                else alert(e.message);
               }
 
               // Naviguer vers une autre page
