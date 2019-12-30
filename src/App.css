@@ -487,7 +487,8 @@ button {
 }
 
 .text-erreur {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-style: normal;
   color: red;
 }
 

@@ -12,8 +12,7 @@ const Publish = props => {
 
   let isEnabled = false;
 
-  if (title && description && price && filesToSend.length >= 1)
-    isEnabled = true;
+  if (title && description && price) isEnabled = true;
 
   // Drop zone : preview
   const thumbsContainer = {
