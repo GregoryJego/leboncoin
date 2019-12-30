@@ -12,7 +12,9 @@ const Publish = props => {
 
   let isEnabled = false;
 
-  if (title && description && price) isEnabled = true;
+  useEffect(() => {
+    if (title && description && price) isEnabled = true;
+  }, [title, description, price]);
 
   // Drop zone : preview
   const thumbsContainer = {
