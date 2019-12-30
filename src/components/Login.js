@@ -56,7 +56,7 @@ const Login = props => {
             }
           } catch (e) {
             setIsLoading(false);
-            alert(e.message);
+            alert(e);
           }
 
           // Naviguer vers une autre page
