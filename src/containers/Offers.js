@@ -13,15 +13,18 @@ const Home = () => {
     try {
       const response = await axios.get(
         "https://leboncoin-api-gj.herokuapp.com/offers"
+        // "http://localhost:4000/offers"
       );
       console.log(Object.keys(response.data));
-      if (Object.keys(response.data) === 0)
+      if (Object.keys(response.data).length === 0)
         console.log("---- No offer available ----");
-      setData(response.data.offers);
-      setIsLoading(false);
+      setData(response.data);
+      console.log("response : ");
+      console.log(response.data);
     } catch (e) {
       alert("An error occurred");
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -62,25 +65,37 @@ const Home = () => {
           </button>
         </div>
         {isLoading === true ? (
-          <div className="loader"></div>
+          <div className="loader" style={{ marginBottom: "2rem" }}></div>
         ) : (
-          <div className="offers">
-            {data.map(offer => {
-              const id = offer["_id"];
-              return (
-                <>
-                  {reg.test(offer.title) && (
-                    <Link key={id} className="offercard" to={"/offer/" + id}>
-                      <OfferCard {...offer} />
-                    </Link>
-                  )}
-                </>
-              );
-            })}
+          <div className="offers-main">
+            {!data ? (
+              <div style={{ marginBottom: "2rem" }}>
+                Aucune offre disponible
+              </div>
+            ) : (
+              <>
+                {data.map(offer => {
+                  const id = offer["_id"];
+                  return (
+                    <>
+                      {reg.test(offer.title) && (
+                        <Link
+                          key={id}
+                          className="offercard"
+                          to={"/offer/" + id}
+                        >
+                          <OfferCard {...offer} />
+                        </Link>
+                      )}
+                    </>
+                  );
+                })}
+              </>
+            )}
           </div>
         )}
 
-        <ul className="pages">
+        <ul className="pages" style={{ marginBottom: "1rem" }}>
           <li>
             <svg
               width="24"

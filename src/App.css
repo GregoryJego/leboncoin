@@ -4,7 +4,7 @@
 /* GLOBAL RULES */
 
 .wrapper {
-  width: 1024px; /* vw permet de rendre le tout redimensionnable */
+  min-width: 1024px; /* vw permet de rendre le tout redimensionnable */
   margin: 0 auto;
 }
 
@@ -438,6 +438,8 @@ button {
 
 .password {
   width: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
 .check {
@@ -535,6 +537,13 @@ footer div {
     font-size: 0.8rem;
   }
   button {
+    font-size: 0.8rem;
+  }
+
+  .modal-button {
+    font-size: 0.7rem;
+  }
+  .signup-side {
     font-size: 0.8rem;
   }
   .menu-left {

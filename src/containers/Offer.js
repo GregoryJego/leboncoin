@@ -12,13 +12,14 @@ const Offer = props => {
     try {
       const response = await axios.get(
         "https://leboncoin-api-gj.herokuapp.com/offer/" + id
+        // "https://localhost:4000/offer/" + id
       );
       setData(response.data);
       console.log("Voici la réponse : " + response.data);
-      setIsLoading(false);
     } catch (e) {
-      alert("An error occurred");
+      alert("Une erreur s'est produite");
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const Offer = props => {
           <div>
             <div className="offer-card box-shadow">
               <div className="img-frame">
-                <img className="img" src={data.pictures[0]} />{" "}
+                <img className="img" src={data.pictures && data.pictures[0]} />
               </div>
               <div className="offer-infos">
                 <div className="offercard-title">{data.title}</div>
