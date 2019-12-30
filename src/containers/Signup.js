@@ -130,7 +130,7 @@ const SignUp = props => {
               } catch (e) {
                 if (e.response.status === 403)
                   alert("Cet utilisateur existe déjà");
-                else alert(e.message);
+                else alert("Une erreur s'est produite");
               }
 
               // Naviguer vers une autre page
