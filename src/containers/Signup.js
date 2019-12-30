@@ -125,7 +125,7 @@ const SignUp = props => {
                   // Naviguer vers la page precedente
                   history.goBack();
                 } else {
-                  alert("An error occurred");
+                  alert(response.error.message);
                 }
               } catch (e) {
                 alert(e.message);
