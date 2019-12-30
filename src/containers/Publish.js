@@ -60,6 +60,7 @@ const Publish = props => {
             })
           )
         );
+        setFilesToSend(acceptedFiles);
       }
     });
 
