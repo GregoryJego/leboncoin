@@ -12,6 +12,6 @@ Use `npm start` to launch the website.
 
 - Create an account (password: salted, hashed, encrypted)
 - Log in (Email / Password)
-- Create an ad
+- Create an ad (title, content, price, picture)
 - View all the ads
 
