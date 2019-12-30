@@ -10,8 +10,8 @@ Use `npm start` to launch the website.
 
 ### Features
 
-####Create an account (password: salted, hashed, encrypted)
-####Log in (Email / Password)
-####Create an ad
-####View all the ads
+- Create an account (password: salted, hashed, encrypted)
+- Log in (Email / Password)
+- Create an ad
+- View all the ads
 
