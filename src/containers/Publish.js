@@ -61,6 +61,7 @@ const Publish = props => {
           )
         );
         setFilesToSend(acceptedFiles);
+        console.log("Files to send : " + acceptedFiles);
       }
     });
 
