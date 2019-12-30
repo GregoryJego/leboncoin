@@ -15,7 +15,7 @@ const Offer = props => {
         // "https://localhost:4000/offer/" + id
       );
       setData(response.data);
-      console.log("Voici la réponse : " + response.data);
+      console.log("Voici la réponse : " + Object.keys(response.data));
     } catch (e) {
       alert("Une erreur s'est produite");
     }
