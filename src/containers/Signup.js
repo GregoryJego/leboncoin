@@ -179,7 +179,7 @@ const SignUp = props => {
                 />
                 {isErrorMessageDisplayed === true &&
                   password !== passwordconfirmation && (
-                    <div className="text-secondaire">
+                    <div className="text-erreur">
                       Les mots de passe saisis sont différents.Veuillez
                       réessayer.
                     </div>

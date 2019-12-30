@@ -486,7 +486,7 @@ button {
   background-color: grey;
 }
 
-.text-secondaire {
+.text-erreur {
   font-size: 1rem;
   color: red;
 }
