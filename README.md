@@ -2,6 +2,8 @@
 
 Project done during training to learn about some basic React.js concepts such as fetching data, state management, token management, components focused programming...
 
+<img src = "https://zupimages.net/up/20/02/c9oy.png" title = "Leboncoin replica" alt = "Leboncoin replica">
+
 ### Setup
 
 Clone the repository then install the dependencies using `npm install`.
